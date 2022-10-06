@@ -40,8 +40,8 @@
     {
       "src": "logovf.svg",
       "type": "image/svg",
-      "sizes": "100x100",
-      "purpose": "any maskable"
+      "sizes": "any",
+      "purpose": "any"
     },
     {
       "src": "logo512.png",
