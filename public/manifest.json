@@ -38,8 +38,8 @@
       "sizes": "192x192"
     },
     {
-      "src": "logo100.png",
-      "type": "image/png",
+      "src": "logovf.svg",
+      "type": "image/svg",
       "sizes": "100x100",
       "purpose": "any maskable"
     },
