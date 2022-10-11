@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link, NavLink, Outlet } from 'react-router-dom';
 
 function App() {
 
@@ -42,7 +43,20 @@ function App() {
       {
         isReadyForInstall && <button onClick={downloadApp} >Descargar</button>
       }
-
+      <nav>
+        <ul>
+          <li>
+            <NavLink end to="/">Home</NavLink>
+          </li>
+          <li>
+            <NavLink to="/contact">Contact</NavLink>
+          </li>
+          <li>
+            <NavLink to="/about">About</NavLink>
+          </li>
+        </ul>
+      </nav>
+      <Outlet />
     </div>
   );
 }
