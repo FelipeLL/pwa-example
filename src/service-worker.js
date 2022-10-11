@@ -70,3 +70,14 @@ self.addEventListener('message', (event) => {
 });
 
 // Any other custom service worker logic can go here.
+self.addEventListener('install', event => {
+  //En los trabajadores del servicio, waitUntil() le dice al navegador que el trabajo está en curso hasta que se cumpla la promesa, y no debe terminar el trabajador del servicio si quiere que se complete el trabajo
+  event.waitUntil(
+    caches
+      .open('cache-zoratama')
+      .then(cache =>
+        cache.addAll([
+          'favicon.ico'
+        ]))
+  )
+})
