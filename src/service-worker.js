@@ -77,7 +77,8 @@ self.addEventListener('install', event => {
       .open('cache-zoratama')
       .then(cache =>
         cache.addAll([
-          '/favicon.ico'
+          '/favicon.ico',
+          "https://zoratamagallery.sfo3.cdn.digitaloceanspaces.com/Utilidades/logo.svg"
         ]))
   )
 })
