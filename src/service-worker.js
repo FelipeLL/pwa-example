@@ -77,7 +77,7 @@ self.addEventListener('install', event => {
       .open('cache-zoratama')
       .then(cache =>
         cache.addAll([
-          'favicon.ico'
+          './favicon.ico'
         ]))
   )
 })
