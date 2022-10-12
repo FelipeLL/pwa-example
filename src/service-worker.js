@@ -84,6 +84,8 @@ self.addEventListener('install', event => {
 })
 
 self.addEventListener('fetch', event => {
+  let headers = new Headers()
+  headers.append('Access-Control-Allow-Origin', '*')
   event.respondWith(
     caches.match(event.request).then(response => {
       if (response) {
