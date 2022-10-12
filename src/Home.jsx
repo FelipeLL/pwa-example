@@ -16,6 +16,10 @@ const Home = () => {
     <div>
       <h2>Home</h2>
       <img src={image} alt="Aquí va la imagen :D" />
+      <img
+        src="https://zoratamagallery.sfo3.cdn.digitaloceanspaces.com/Utilidades/logo.svg"
+        alt="logo"
+      />
     </div>
   );
 };
