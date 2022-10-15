@@ -72,13 +72,13 @@ self.addEventListener('message', (event) => {
 // Any other custom service worker logic can go here.
 self.addEventListener('install', event => {
   //En los trabajadores del servicio, waitUntil() le dice al navegador que el trabajo está en curso hasta que se cumpla la promesa, y no debe terminar el trabajador del servicio si quiere que se complete el trabajo
-  console.log(event);
   event.waitUntil(
     caches
       .open('cache-zoratama')
       .then(cache =>
         cache.addAll([
-          "favicon.ico"
+          "favicon.ico",
+          "https://i.picsum.photos/id/1050/200/300.jpg?hmac=mMZp1DAD5EpHCZh-YBwfvrg5w327V3DoJQ8CmRAKF70"
         ]))
   )
 })
@@ -87,7 +87,6 @@ self.addEventListener('fetch', event => {
   event.respondWith(
     caches.match(event.request).then(response => {
       console.log(response);
-      console.log(event);
       if (response) {
         // ¡encontramos los archivos en la cache!
         return response
