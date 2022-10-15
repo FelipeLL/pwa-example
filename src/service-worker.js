@@ -77,17 +77,15 @@ self.addEventListener('install', event => {
       .open('cache-zoratama')
       .then(cache =>
         cache.addAll([
-          '/favicon.ico',
-          "https://zoratamagallery.sfo3.cdn.digitaloceanspaces.com/Utilidades/logo.svg"
+          '/favicon.ico'
         ]))
   )
 })
 
 self.addEventListener('fetch', event => {
-  let headers = new Headers()
-  headers.append('Access-Control-Allow-Origin', '*')
   event.respondWith(
     caches.match(event.request).then(response => {
+      console.log(response);
       if (response) {
         // ¡encontramos los archivos en la cache!
         return response
@@ -96,3 +94,4 @@ self.addEventListener('fetch', event => {
     })
   )
 })
+
