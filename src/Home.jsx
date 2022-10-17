@@ -6,8 +6,9 @@ const Home = () => {
 
   useEffect(() => {
     const getData = async () => {
-      const res = await axios.get("https://pokeapi.co/api/v2/pokemon/ditto");
-      setImage(res.data.sprites.other.dream_world.front_default);
+      const res = await axios.get("https://mapzoratama.herokuapp.com/api/auth");
+      console.log(res.data);
+      setImage(res.data);
     };
     getData();
   }, []);
@@ -15,7 +16,7 @@ const Home = () => {
   return (
     <div>
       <h2>Home</h2>
-      <img src={image} alt="Aquí va la imagen :D" />
+      {/* <img src={image} alt="Aquí va la imagen :D" /> */}
       <img
         src="https://i.picsum.photos/id/1050/200/300.jpg?hmac=mMZp1DAD5EpHCZh-YBwfvrg5w327V3DoJQ8CmRAKF70"
         alt="logo"
